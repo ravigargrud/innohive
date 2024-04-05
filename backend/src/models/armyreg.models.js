@@ -13,22 +13,23 @@ const armyregSchema = new moongoose.Schema({
         soldierCount: {
             type: Number
         },
-        weapons: {
-            type: moongoose.Schema.Types.weapon,
+        weapons: [{
+            type: moongoose.Schema.Types.ObjectId,
             ref: 'weapon'
-        },
-        vehicles: {
-            type: moongoose.Schema.Types.vehicle,
+        }],
+        vehicles: [{
+            type: moongoose.Schema.Types.ObjectId,
             ref: 'vehicle'
-        },
-        infrastructure: {
-            type: moongoose.Schema.Types.infrastructure,
+        }],
+        infrastructure: [{
+            type: moongoose.Schema.Types.ObjectId,
             ref: 'infrastructure'
-        },
-        collaborators: {
-            type: moongoose.Schema.Types.collaborator,
-            ref: 'collaborator'
-        }
-})
+        }],
+        collaborators: [{
+            
+            type: moongoose.Schema.Types.ObjectId,
+            ref: 'armyReg'
+        }]
+}, {timestamps: true})
 
 export const armyReg = moongoose.model('armyReg', armyregSchema);

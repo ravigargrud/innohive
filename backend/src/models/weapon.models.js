@@ -12,6 +12,7 @@ const weaponSchema = new moongoose.Schema({
     },
     weaponcategory: {
         type: String,
+        enum: {values: ['Guns', 'Artillery'], message: 'Invalid Category'},
         required: true
     },
     weaponprice: {

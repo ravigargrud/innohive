@@ -12,6 +12,7 @@ const infrastructureSchema = new moongoose.Schema({
     },
     infrastructurecategory: {
         type: String,
+        enum: {values: ['Workspace', 'Camp'], message: 'Invalid Category'},
         required: true
     },
     infrastructurelocation: {
@@ -19,3 +20,5 @@ const infrastructureSchema = new moongoose.Schema({
         required: true
     }
 });
+
+const Infrastructure = moongoose.model('infrastructure', infrastructureSchema);

@@ -1,28 +1,28 @@
 import moongoose from 'mongoose';
 
-
-const collaboratorSchema = new moongoose.Schema({
-    collaboratorid: {
+const vehicleSchema = new moongoose.Schema({
+    vehicleid: {
         type: String,
         required: true,
         unique: true
     },
-    collaboratorname: {
+    vehiclename: {
         type: String,
         required: true
     },
-    collaboratorcategory: {
+    vehiclecategory: {
         type: String,
+        enum: {values: ['Tanks', 'Cars'], message: 'Invalid Category'},
         required: true
     },
-    collaboratorprice: {
+    vehicleprice: {
         type: Number,
         required: true
     },
-    collaboratorquantity: {
+    vehiclequantity: {
         type: Number,
         required: true
     }
-})
+});
 
-export const collaborator = moongoose.model('collaborator', collaboratorSchema);
+export const vehicle = moongoose.model('vehicle', vehicleSchema);
