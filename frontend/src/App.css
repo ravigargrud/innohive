@@ -1,0 +1,69 @@
+.mainscreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    height: 650px;
+    margin: 5px;
+}
+
+.loginsection{
+    width: 830px;
+    height: 650px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.imagesection{
+    width: 600px;
+    height: 650px;
+    margin: 0px;
+}
+
+.imagesection img{
+    width: 600px;   
+    height: 650px;
+    margin: 0;
+    padding: 0;
+}
+
+.logosection img{
+    width: 100px;
+    margin-bottom: 50px;
+}
+
+.textsection{
+    font-size: 24px;
+    margin-bottom: 100px;
+    color: white;
+    text-align: center;
+}
+
+.formsection{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-around;
+}
+
+.formsection input{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 30px;
+    width: 550px;
+    align-self: center;
+}
+
+.formsection button{
+    padding: 0px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    height: 45px;
+    width: 500px;
+    align-self: center;
+}   
