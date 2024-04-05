@@ -54,6 +54,18 @@ connectDB()
 // });
 
 
+// Backend API endpoint to handle user creation
+app.post('/api/users', async (req, res) => {
+  try {
+    // Create a new user using the armyReg model
+    const newUser = await armyReg.create(req.body);
+    console.log('User created:', newUser);
+    res.status(201).json(newUser);
+  } catch (error) {
+    console.error('Error creating user:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 
 app.listen(PORT, () => {
