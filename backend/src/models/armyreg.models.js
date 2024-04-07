@@ -1,18 +1,18 @@
 import moongoose from 'mongoose';
 
 const armyregSchema = new moongoose.Schema({
-        name: { 
+        username: { 
         type: String,
-        required: true
+        
         },
         regimentid: {
         type: String,
-        required: true,
+        
         unique: true
         },
         password: {
         type: String,
-        required: true
+     
         },
         soldierCount: {
             type: Number

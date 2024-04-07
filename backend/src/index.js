@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import { DB_NAME } from './constants.js';
 import dotenv from 'dotenv';
+import { armyReg } from './models/armyreg.models.js'; // Import the armyReg model
 
 dotenv.config({
   path: './.env'
@@ -25,39 +26,14 @@ const connectDB = async () => {
   } catch (error) {
     console.error('Error connecting to the database: ', error);
   }
-
 }
 
-
-connectDB()
-.then(() => {
-  console.log('Connected to the database');
-})
-.catch((error) => {
-  console.error('Error connecting to the database: ', error);
-});
-
-
-// var myobj = [
-//   {
-//   name: 'John',
-//   age: 30,
-//   city: 'New York'
-//   },
-//   {name: 'Peter',
-//   age: 45,
-//   city: 'New York'},
-// ];
-
-// app.get('/api/sample', (req, res) => {
-//     res.send(myobj);
-// });
-
+connectDB();
 
 // Backend API endpoint to handle user creation
 app.post('/api/users', async (req, res) => {
   try {
-    // Create a new user using the armyReg model
+    // Create a new user using the armyReg model (imported from armyreg.models.js)
     const newUser = await armyReg.create(req.body);
     console.log('User created:', newUser);
     res.status(201).json(newUser);
@@ -67,10 +43,6 @@ app.post('/api/users', async (req, res) => {
   }
 });
 
-
 app.listen(PORT, () => {
   console.log('Server is running on port', PORT);
 });
-
-
-
